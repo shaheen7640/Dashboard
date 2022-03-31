@@ -17,7 +17,7 @@ import com.Dashboard.utill.ExpliciteWait;
 
 public class BaseClass {
 
-	public static WebDriver driver;
+	public static WebDriver driver =null;
 	public static Properties property;
 	
 	public BaseClass() {
@@ -44,10 +44,11 @@ public class BaseClass {
 	}
 	public static void initialization() {
 		try {
+			if(driver==null) {
 		System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+ "\\src\\test\\resources\\ChromeDriver\\chromedriver.exe");
 	
 		driver = new ChromeDriver();
-		
+			}
 		driver.manage().deleteAllCookies();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(ExpliciteWait.PAGE_LOAD_TIMEOUT));
@@ -56,7 +57,7 @@ public class BaseClass {
 		driver.get(property.getProperty("Url"));
 		}
 		catch(Exception e) {
-			System.out.println("Make sure you are connected with VPN");
+			System.out.println("Make sure you are connected with VPN/Connection is slow/Chromedriver is out of date");
 		}
 	}	
 	public static void takeScreenShot() throws IOException {

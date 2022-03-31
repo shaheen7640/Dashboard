@@ -3,9 +3,12 @@ package com.Dashboard.TestCases;
 import java.io.IOException;
 
 import org.testng.Assert;
-import org.testng.ITestResult;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -23,7 +26,7 @@ public class LoginPageTest extends BaseClass {
 		
 		super();
 	}
-	@BeforeMethod
+	@BeforeTest
 	public void setUp() {
 		
 		//Calling initialization method from Base class
@@ -45,6 +48,7 @@ public class LoginPageTest extends BaseClass {
 		
 		boolean flag = loginPage.verify_Logo_On_LoginPage();
 		Assert.assertTrue(flag);
+		System.out.println("Logo appeared on login page");
 	}
 	@DataProvider
 	public Object[][] getTestDatafromExcel() {
@@ -70,15 +74,19 @@ public class LoginPageTest extends BaseClass {
 			System.out.println(e.getCause());
 		}*/
 	}
-	@AfterMethod
-	public void tearDown(ITestResult result) throws IOException {
+	@AfterTest
+	public void tearDown() {
+		
+	driver.quit();
+	driver=null;
+/*	public void tearDown(ITestResult result) throws IOException {
 		
 		if(ITestResult.FAILURE==result.getStatus()) {
 			takeScreenShot();
 			System.out.println(result.getName());
 		}
 		driver.quit();
-	}
+	}*/
 	
-
+	}
 }

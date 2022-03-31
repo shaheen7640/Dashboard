@@ -5,8 +5,8 @@
     <classes>
       <class name="com.Dashboard.TestCases.LoginPageTest">
         <methods>
-          <include name="setUp"/>
           <include name="validateUserLogin"/>
+          <include name="setUp"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- com.Dashboard.TestCases.LoginPageTest -->

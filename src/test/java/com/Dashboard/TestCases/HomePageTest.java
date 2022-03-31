@@ -1,8 +1,11 @@
 package com.Dashboard.TestCases;
 
 
-import org.testng.annotations.BeforeMethod;
-
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
@@ -27,7 +30,7 @@ public class HomePageTest extends BaseClass {
 		super();
 	}
 	
-	@BeforeMethod()
+	@BeforeClass
 	public void setUp() {
 		initialization();
 		loginPage=new LoginPage();
@@ -107,5 +110,10 @@ public class HomePageTest extends BaseClass {
 				
 		softAssertion.assertAll();
 	}
-	
+	@AfterClass
+	public void tearDown() {
+		
+	driver.quit();
+	//driver=null;
+	}
 }

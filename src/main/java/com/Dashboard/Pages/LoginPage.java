@@ -18,18 +18,17 @@ public class LoginPage extends BaseClass{
     @FindBy(xpath = "//button[@type='submit' and text()='Log in']")
     WebElement loginbtn;
     
-    @FindBy(xpath = "//img[@src='/images/abit_logo.png']")
+    @FindBy(css = "a.nav-link>img.img-fluid")
     WebElement logo_LoginPage;
     
-    @FindBy(xpath = "//a[text()='Forgot your password?']")
+    @FindBy(css = "a.darkbluelink")
     WebElement forgotPaswrd_linktext;
     
-   // @FindBy(xpath = "//a[contains(text(),' NOTIFICATIONS')]")
-   // WebElement notification;
+
     @FindBy(xpath = "//a[contains(text(),'Logout')]")
     WebElement btnLogout;
     
-    @FindBy(xpath = "//img[@src='/images/logo-blk.png']")
+    @FindBy(css = "a.navbar-brand>img")
 	WebElement homePage_Logo;
     
     //Constructor
