@@ -2,13 +2,9 @@ package com.Dashboard.TestCases;
 
 
 import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-
 import com.Dashboard.Base.BaseClass;
 import com.Dashboard.Pages.HomePage;
 import com.Dashboard.Pages.LoginPage;
@@ -62,51 +58,53 @@ public class HomePageTest extends BaseClass {
 		}
 			//Home
 	    homePage.verify_menu_Home();
-		boolean menuHome = homePage.verify_menu_Home();
-		softAssertion.assertEquals(menuHome,true,"Menu Home not visible");
-		System.out.println(property.getProperty("Home_Label"));
+		String menuHome = homePage.verify_menu_Home();
+		//softAssertion.assertEquals(menuHome,true,"Menu Home not visible");
+		softAssertion.assertEquals(menuHome,property.getProperty("Home_Label"),"Menu Home not visible");
+	   
+		//System.out.println(property.getProperty("Home_Label"));
 		
 		//RMS
 		homePage.verify_menu_RMS();
-		boolean menuRms = homePage.verify_menu_RMS();
-		softAssertion.assertEquals(menuRms,true,"Menu RMS not visible");
-		System.out.println(property.getProperty("RMS_Label"));
+		String menuRms = homePage.verify_menu_RMS();
+		softAssertion.assertEquals(menuRms,property.getProperty("RMS_Label"),"Menu RMS not visible");
+		
 		
 		//Ticket
 		homePage.verify_menu_Ticket();
-		boolean menuTicket = homePage.verify_menu_Ticket();
-		softAssertion.assertEquals(menuTicket,true,"Menu Ticket not visible");
-		System.out.println(property.getProperty("Ticket_Label"));
+		String menuTicket = homePage.verify_menu_Ticket();
+		softAssertion.assertEquals(menuTicket,property.getProperty("Ticket_Label"),"Menu Ticket not visible");
+		
 		
 		//Gallery
 		homePage.verify_HomePageTitle();
-		boolean menuGallery = homePage.verify_menu_Gallery();
-		softAssertion.assertEquals(menuGallery,true,"Menu Gallery not visible");
-		System.out.println(property.getProperty("Gallery_Label"));
+		String menuGallery = homePage.verify_menu_Gallery();
+		softAssertion.assertEquals(menuGallery,property.getProperty("Gallery_Label"),"Menu Gallery not visible");
+		
 		
 		//MyProfile
 				homePage.verify_menu_MyProfile();
-				boolean menuMyProfile = homePage.verify_menu_MyProfile();
-				softAssertion.assertEquals(menuMyProfile,true,"Menu MyProfile not visible");
-				System.out.println(property.getProperty("MyProfile_Label"));
+				String menuMyProfile = homePage.verify_menu_MyProfile();
+				softAssertion.assertEquals(menuMyProfile,property.getProperty("MyProfile_Label"),"Menu MyProfile not visible");
+				
 				
 				//DSR
 				homePage.verify_menu_DSR();
-				boolean menuDsr = homePage.verify_menu_DSR();
-				softAssertion.assertEquals(menuDsr,true,"Menu DSR not visible");
-				System.out.println(property.getProperty("DSR_Label"));
+				String menuDsr = homePage.verify_menu_DSR();
+				softAssertion.assertEquals(menuDsr,property.getProperty("DSR_Label"),"Menu DSR not visible");
+				
 				
 				//Admin
 				homePage.verify_menu_Admin();
-				boolean menuAdmin = homePage.verify_menu_Admin();
-				softAssertion.assertEquals(menuAdmin,true,"Menu Admin not visible");
-				System.out.println(property.getProperty("Admin_Label"));
+				String menuAdmin = homePage.verify_menu_Admin();
+				softAssertion.assertEquals(menuAdmin,property.getProperty("Admin_Label"),"Menu Admin not visible");
+				
 				
 				//Logout
 				homePage.verify_menu_Logout();
-				boolean menuLogout = homePage.verify_menu_Logout();
-				softAssertion.assertEquals(menuLogout,true,"Menu Logout not visible");
-				System.out.println(property.getProperty("Logout_Label"));
+				String menuLogout = homePage.verify_menu_Logout();
+				softAssertion.assertEquals(menuLogout,property.getProperty("Logout_Label"),"Menu Logout not visible");
+				
 				
 		softAssertion.assertAll();
 	}

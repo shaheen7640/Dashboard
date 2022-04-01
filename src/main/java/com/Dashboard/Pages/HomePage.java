@@ -8,34 +8,43 @@ import com.Dashboard.Base.BaseClass;
 
 public class HomePage extends BaseClass{
 	
-	@FindBy(xpath = "//img[@src='/images/logo-blk.png']")
-	WebElement homePage_Logo;
+	@FindBy(css = "a.navbar-brand>img")
+	 WebElement homePage_Logo;
     
-	@FindBy(xpath = "//a[@class='nav-link-col3 mr-1 activeHeader3 nav-anchor' and text()='Home']")
+	//@FindBy(xpath = "//a[@class='nav-link-col3 mr-1 activeHeader3 nav-anchor' and text()='Home']")
+	@FindBy(css = "ul.navbar-nav.mr-auto.nav-grp-left-pad>li:nth-of-type(1)>a")
     WebElement menu_Home;
 	
-	@FindBy(xpath ="//a[@class='nav-link-col2 mr-1 nav-anchor' and text()='RMS']")
+	//@FindBy(xpath ="//a[@class='nav-link-col2 mr-1 nav-anchor' and text()='RMS']")
+	@FindBy(css = "ul.navbar-nav.mr-auto.nav-grp-left-pad>li:nth-of-type(2)>a")
 	WebElement menu_RMS;
 			
-	@FindBy(xpath = "//a[@class='nav-link-col1 mr-1 nav-anchor' and text()='Ticket']")
+	//@FindBy(xpath = "//a[@class='nav-link-col1 mr-1 nav-anchor' and text()='Ticket']")
+	@FindBy(css = "ul.navbar-nav.mr-auto.nav-grp-left-pad>li:nth-of-type(3)>a")
 	WebElement menu_Ticket;
 	
-	@FindBy(xpath = "//a[@class='nav-link-col3 mr-1 nav-anchor' and text()='Gallery']")
+	//@FindBy(xpath = "//a[@class='nav-link-col3 mr-1 nav-anchor' and text()='Gallery']")
+	@FindBy(css = "ul.navbar-nav.mr-auto.nav-grp-left-pad>li:nth-of-type(4)>a")
 	WebElement menu_Gallery;
 	
-	@FindBy(xpath = "//a[contains(text(),'My Profile')]")
+	//@FindBy(xpath = "//a[contains(text(),'My Profile')]")
+	@FindBy(css = "ul.navbar-nav.mr-auto.nav-grp-left-pad>li:nth-of-type(5)>a")
 	WebElement menu_MyProfile;
 	
-	@FindBy(xpath = "//a[contains(text(),'DSR')]")
+	//@FindBy(xpath = "//a[contains(text(),'DSR')]")
+	@FindBy(css = "ul.navbar-nav.mr-auto.nav-grp-left-pad>li:nth-of-type(6)>a")
 	WebElement menu_DSR;
 	
-	@FindBy(xpath = "//a[contains(text(),'Admin')]")
+	//@FindBy(xpath = "//a[contains(text(),'Admin')]")
+	@FindBy(css = "ul.navbar-nav.mr-auto.nav-grp-left-pad>li:nth-of-type(7)>a")
 	WebElement menu_Admin;
 	
-	@FindBy(xpath = "//a[contains(text(),'Logout')]")
+	//@FindBy(xpath = "//a[contains(text(),'Logout')]")
+	@FindBy(css = "ul.navbar-nav.mr-auto.nav-grp-left-pad>li:nth-of-type(8)>a")
 	WebElement menu_Logout;
 	
-	@FindBy(xpath = "//div[@class='user-img anim-user-image']")
+	//@FindBy(xpath = "//div[@class='user-img anim-user-image']")
+	@FindBy(css = "ul.navbar-nav.mr-auto.nav-grp-left-pad>li:nth-of-type(9)>a")
 	WebElement user_Picture;
 	
 	//Initialize all the elements/objects inside the constructor
@@ -50,38 +59,55 @@ public class HomePage extends BaseClass{
 	    	
 	    	return homePage_Logo.isDisplayed();
 	    }
-	public boolean verify_menu_Home() {
-		
-		return menu_Home.isDisplayed();
+	    
+	    public String verify_menu_Home() {
+			String txthome=menu_Home.getText();
+			System.out.println(txthome);
+			return txthome;
+			
+		}
+	public String verify_menu_RMS() {
+		String txtRMS=menu_RMS.getText();
+		System.out.println(txtRMS);
+		return txtRMS;
 		
 	}
-	public boolean verify_menu_RMS() {
+	public String verify_menu_Ticket() {
 		
-		return menu_RMS.isDisplayed();
+		String txtTicket=menu_Ticket.getText();
+		System.out.println(txtTicket);
+		return txtTicket;
 	}
-	public boolean verify_menu_Ticket() {
+	public String verify_menu_Gallery() {
 		
-		return menu_Ticket.isDisplayed();
+		String txtGallery=menu_Gallery.getText();
+		System.out.println(txtGallery);
+		return txtGallery;
 	}
-	public boolean verify_menu_Gallery() {
+	public String verify_menu_MyProfile() {
 		
-		return menu_Gallery.isDisplayed();
+		String txtMyProfile=menu_MyProfile.getText();
+		System.out.println(txtMyProfile);
+		return txtMyProfile;
 	}
-	public boolean verify_menu_MyProfile() {
+	public String verify_menu_DSR() {
 		
-		return menu_MyProfile.isDisplayed();
-	}
-	public boolean verify_menu_DSR() {
-		
-		return menu_DSR.isDisplayed();
+		String txtDsr=menu_DSR.getText();
+		System.out.println(txtDsr);
+		return txtDsr;
 	}
 	
-	public boolean verify_menu_Admin() {
+	public String verify_menu_Admin() {
 		
-		return menu_Admin.isDisplayed();
+		String txtAdmin=menu_Admin.getText();
+		System.out.println(txtAdmin);
+		return txtAdmin;
 	}
-	public boolean verify_menu_Logout() {
+	public String verify_menu_Logout() {
 		
-		return menu_Logout.isDisplayed();
+
+		String txtLogout=menu_Logout.getText();
+		System.out.println(txtLogout);
+		return txtLogout;
 	}
 }
