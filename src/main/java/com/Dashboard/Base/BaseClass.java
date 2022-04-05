@@ -60,11 +60,11 @@ public class BaseClass {
 			System.out.println("Make sure you are connected with VPN/Connection is slow/Chromedriver is out of date");
 		}
 	}	
-	public static void takeScreenShot() throws IOException {
+	public static void takeScreenShot(String testMethodName) throws IOException {
 		
 		File scrnShot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		String currentDir = System.getProperty("user.dir");
 		
-		FileUtils.copyFile(scrnShot,new File(currentDir +"\\ScreenShots" +".png"));
+		FileUtils.copyFile(scrnShot,new File(currentDir+"\\Screenshot\\"+testMethodName+".png"));
 	}
 }

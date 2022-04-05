@@ -1,15 +1,21 @@
 package com.Dashboard.TestCases;
 
 
+import java.io.IOException;
+
+import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import com.Dashboard.Base.BaseClass;
 import com.Dashboard.Pages.HomePage;
 import com.Dashboard.Pages.LoginPage;
+import com.screenShot.ScreenShotListener;
 //import com.Dashboard.utill.ExcelUtil;
-
+@Listeners(ScreenShotListener.class) 
 
 public class HomePageTest extends BaseClass {
 	
@@ -34,8 +40,6 @@ public class HomePageTest extends BaseClass {
 	//	loginPageTest.getTestDatafromExcel();
 		homePage = loginPage.verify_User_Login(property.getProperty("UserName"),property.getProperty("Password"));
 	}
-	
-	
 	
 	@Test
 	public void verify_all_menu() {
@@ -82,7 +86,7 @@ public class HomePageTest extends BaseClass {
 		softAssertion.assertEquals(menuGallery,property.getProperty("Gallery_Label"),"Menu Gallery not visible");
 		
 		
-		//MyProfile
+	         	//MyProfile
 				homePage.verify_menu_MyProfile();
 				String menuMyProfile = homePage.verify_menu_MyProfile();
 				softAssertion.assertEquals(menuMyProfile,property.getProperty("MyProfile_Label"),"Menu MyProfile not visible");
@@ -114,4 +118,15 @@ public class HomePageTest extends BaseClass {
 	driver.quit();
 	//driver=null;
 	}
+/*	@AfterMethod
+	public void screenShot(ITestResult result) throws IOException {
+	
+	if(ITestResult.FAILURE==result.getStatus()) {
+		takeScreenShot();
+		System.out.println(result.getName());
+	}
+	//driver.quit();
+	//driver=null;
+	
+}*/
 }
