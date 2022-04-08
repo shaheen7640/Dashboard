@@ -67,4 +67,5 @@ public class BaseClass {
 		
 		FileUtils.copyFile(scrnShot,new File(currentDir+"\\Screenshot\\"+testMethodName+".png"));
 	}
-}
+	
+	}

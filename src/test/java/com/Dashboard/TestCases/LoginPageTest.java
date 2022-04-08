@@ -3,12 +3,8 @@ package com.Dashboard.TestCases;
 import java.io.IOException;
 
 import org.testng.Assert;
-import org.testng.ITestResult;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -28,7 +24,7 @@ public class LoginPageTest extends BaseClass {
 		
 		super();
 	}
-	@BeforeMethod
+	@BeforeClass
 	public void setUp() {
 		
 		//Calling initialization method from Base class
@@ -53,7 +49,6 @@ public class LoginPageTest extends BaseClass {
 		String loginPageTitle = loginPage.verify_LoginPageTitle();
 		System.out.println("Login Page Title: "+ loginPageTitle);
 		Assert.assertEquals(loginPageTitle, property.getProperty("LoginTitle"));
-		
 	}
 	@Test(priority = 2)
 	public void validate_logoOnLoginPage() {
@@ -62,13 +57,20 @@ public class LoginPageTest extends BaseClass {
 		Assert.assertTrue(flag);
 		System.out.println("Logo appeared on login page");
 	}
+	@Test(priority = 3)
+	public void validate_Forgot_Password() {
+		
+		String txtForgotPass = loginPage.verify_ForgotPasswordText_OnLoginPage();
+		System.out.println("Forgot password text : "+txtForgotPass);
+		Assert.assertEquals(txtForgotPass, property.getProperty("Forgot_Pass"));
+	}
 	@DataProvider
 	public Object[][] getTestDatafromExcel() {
 		//Calling the getTestData function from ExcelUtil class
 		Object data[][] = ExcelUtil.getTestData(sheetName);
 		return data;
 	}
-	@Test(priority = 3, dataProvider = "getTestDatafromExcel")
+	@Test(priority = 4, dataProvider = "getTestDatafromExcel")
 	public void validateUserLogin(String email, String password) {
 	
 		homePage = loginPage.verify_User_Login(email,password);
@@ -82,7 +84,7 @@ public class LoginPageTest extends BaseClass {
 	@AfterTest
 	public void tearDown()  {
 		driver.quit();
-		driver=null;
+		//driver=null;
 	}
 
 }

@@ -45,6 +45,10 @@ public class LoginPage extends BaseClass{
     	
     	return logo_LoginPage.isDisplayed();
     }
+    public String verify_ForgotPasswordText_OnLoginPage() {
+    	
+    	return forgotPaswrd_linktext.getText();
+    }
     public boolean verify_user_after_login() {
     	
     	return homePage_Logo.isDisplayed();

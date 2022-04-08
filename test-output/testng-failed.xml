@@ -3,13 +3,13 @@
 <suite name="Failed suite [Regression]" guice-stage="DEVELOPMENT" verbose="2">
   <test thread-count="5" name="Login(failed)" verbose="2">
     <classes>
-      <class name="com.Dashboard.TestCases.LoginPageTest">
+      <class name="com.Dashboard.TestCases.ForgotPasswordTest">
         <methods>
-          <include name="validateUserLogin" invocation-numbers="1 2"/>
-          <include name="setUp"/>
+          <include name="validate_forgotPassword"/>
           <include name="tearDown"/>
+          <include name="setUp"/>
         </methods>
-      </class> <!-- com.Dashboard.TestCases.LoginPageTest -->
+      </class> <!-- com.Dashboard.TestCases.ForgotPasswordTest -->
     </classes>
   </test> <!-- Login(failed) -->
 </suite> <!-- Failed suite [Regression] -->

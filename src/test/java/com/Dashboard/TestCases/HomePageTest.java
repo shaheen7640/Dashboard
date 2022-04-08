@@ -1,11 +1,8 @@
 package com.Dashboard.TestCases;
 
 
-import java.io.IOException;
 
-import org.testng.ITestResult;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -27,7 +24,7 @@ public class HomePageTest extends BaseClass {
 	String sheetName = property.getProperty("Excel_SheetName");
 	SoftAssert softAssertion = new SoftAssert();
 	
-	HomePageTest(){
+	public HomePageTest(){
 		//Calling base class constructor to load the property file
 		super();
 	}
@@ -36,14 +33,14 @@ public class HomePageTest extends BaseClass {
 	public void setUp() {
 		initialization();
 		loginPage=new LoginPage();
-		loginPageTest = new LoginPageTest();
+	//	loginPageTest = new LoginPageTest();
 	//	loginPageTest.getTestDatafromExcel();
-		homePage = loginPage.verify_User_Login(property.getProperty("UserName"),property.getProperty("Password"));
+		
 	}
 	
 	@Test
 	public void verify_all_menu() {
-		
+		homePage = loginPage.verify_User_Login(property.getProperty("UserName"),property.getProperty("Password"));
 		String homePageTitle = homePage.verify_HomePageTitle();
 		softAssertion.assertEquals(homePageTitle,property.getProperty("Title_HomePage"), "Home page title is mismatch/not appeared");
 		System.out.println("Home Page Title: "+homePageTitle);
@@ -112,7 +109,7 @@ public class HomePageTest extends BaseClass {
 				
 		softAssertion.assertAll();
 	}
-	@AfterClass
+	@AfterTest
 	public void tearDown() {
 		
 	driver.quit();
