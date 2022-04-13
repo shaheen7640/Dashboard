@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.Dashboard.TestCases.ForgotPasswordTest">
+      <class name="com.Dashboard.TestCases.AddAlbum_GalleryTest">
         <methods>
-          <include name="validate_forgotPassword"/>
           <include name="tearDown"/>
           <include name="setUp"/>
+          <include name="validate_view_album_label" invocation-numbers="0"/>
         </methods>
-      </class> <!-- com.Dashboard.TestCases.ForgotPasswordTest -->
+      </class> <!-- com.Dashboard.TestCases.AddAlbum_GalleryTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

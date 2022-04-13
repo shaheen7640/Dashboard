@@ -21,7 +21,7 @@ public class HomePageTest extends BaseClass {
 	LoginPageTest loginPageTest;
 	String usrName;
 	String pwd;
-	String sheetName = property.getProperty("Excel_SheetName");
+	//String sheetName = property.getProperty("Excel_SheetName");
 	SoftAssert softAssertion = new SoftAssert();
 	
 	public HomePageTest(){
@@ -35,12 +35,12 @@ public class HomePageTest extends BaseClass {
 		loginPage=new LoginPage();
 	//	loginPageTest = new LoginPageTest();
 	//	loginPageTest.getTestDatafromExcel();
-		
+		homePage = loginPage.verify_User_Login(property.getProperty("UserName"),property.getProperty("Password"));
 	}
 	
 	@Test
 	public void verify_all_menu() {
-		homePage = loginPage.verify_User_Login(property.getProperty("UserName"),property.getProperty("Password"));
+		
 		String homePageTitle = homePage.verify_HomePageTitle();
 		softAssertion.assertEquals(homePageTitle,property.getProperty("Title_HomePage"), "Home page title is mismatch/not appeared");
 		System.out.println("Home Page Title: "+homePageTitle);
