@@ -1,14 +1,17 @@
 package com.Dashboard.Pages;
 
-import java.util.List;
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
+import java.io.File;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import com.Dashboard.Base.BaseClass;
-import com.Dashboard.utill.ExpliciteWait;
+
 
 public class AddAlbum_GalleryPage extends BaseClass {
 	
@@ -23,18 +26,30 @@ public class AddAlbum_GalleryPage extends BaseClass {
 	@FindBy(className = "btn-primary")
 	static WebElement btn_addAlbum;
 	
-	@FindBy(css = "body > div.modal > div > div > div.modal-content.modal-content1.modal-body >"
-			+ " div > div > div.form-body1.p-4 > div > div:nth-child(2) > div > div > div > div > div > div.css-g1d714-ValueContainer")
-	//@FindBy(xpath = "//div[@class=' css-2b097c-container']")
+	@FindBy(xpath = "//div[@class=' css-2b097c-container']")
 	WebElement albmContainer;
 	
 	@FindBy(name = "albumName")
 	WebElement txtAlbumName;
 	
-	//@FindBy(xpath  = "//div[@class=' css-1uccc91-singleValue']")
-	@FindBy(css = "body > div.modal > div > div > div.modal-content.modal-content1.modal-body >"
-			+ " div > div > div.form-body1.p-4 > div > div:nth-child(2) > div > div > div > div > div > div.css-g1d714-ValueContainer > div.css-1wa3eu0-placeholder")
+	//Change the album category from here as option 0,1,2
+	@FindBy(id = "react-select-2-option-2")
 	WebElement albumCategory;
+	
+	@FindBy(xpath  = "//textarea[@name='description']")
+	WebElement txtdescription;
+	
+	@FindBy(css = "button.chooseFileButton")
+	WebElement selectImage;
+	
+	@FindBy(css = "div.uploadPictureContainer>img")
+	public WebElement uploadedImages;
+	
+	@FindBy(css = "button.btn.btn-primary.btn-lg")
+	WebElement btnUpload;
+	
+	@FindBy(css = "button.btn.btn-primary")
+	public WebElement btnClose;
 	
 	public AddAlbum_GalleryPage() {
 		
@@ -47,19 +62,37 @@ public class AddAlbum_GalleryPage extends BaseClass {
     	  System.out.println(lbl_AlbumText);
     	  
       }
-      public void sendKeys_albumName() {
-    	  
-      }
-      public void add_album(String albumName) {
+      public void add_album(String albumName, String description) throws AWTException {
     	  btn_addAlbum.click();
     	
     	  txtAlbumName.sendKeys(albumName);
+    	  
     	 albmContainer.click();
     	 
-    	
-    	
-    	 albmContainer.sendKeys("Trips");
+    	 albumCategory.click();
+    	 txtdescription.sendKeys(description);
     	 
+    	 selectImage.click();
+    	 
+    	 robot =new Robot();
+    	 
+    	 String imagePath = System.getProperty("user.dir")+File.separator+"Upload_Album"+File.separator+property.getProperty("Album");
+    	 StringSelection path = new StringSelection(imagePath);
+    	// StringSelection imagePath = new StringSelection(property.getProperty("AlbumPath"));
+    	 Toolkit.getDefaultToolkit().getSystemClipboard().setContents(path, null);
+    	 robot.setAutoDelay(3000);
+    	 
+    	 robot.keyPress(KeyEvent.VK_CONTROL);
+    	 robot.keyPress(KeyEvent.VK_V);
+    	 
+    	 robot.keyRelease(KeyEvent.VK_CONTROL);
+    	 robot.keyRelease(KeyEvent.VK_V);
+    	 
+    	 robot.setAutoDelay(2000);
+    	 
+    	 robot.keyPress(KeyEvent.VK_ENTER);
+    	 robot.keyRelease(KeyEvent.VK_ENTER);
+    	
     	/*  List<WebElement> list = driver.findElements(By.xpath("//div[@class=' css-1wa3eu0-placeholder']"));
     	  System.out.println(list.size());
     	  for(int i=0; i<list.size(); i++)
@@ -69,11 +102,26 @@ public class AddAlbum_GalleryPage extends BaseClass {
     			  break;
     		  }
     	  }*/
-    	  
-    	// albumCategory.sendKeys("Trips");
-    	// ExpliciteWait.waitFor_albumCategory();
-    	//albmContainer.sendKeys("Trips");
     	 
       }
-      
+      public boolean imageUploadVerification() {
+    	       		    	  
+    	  return uploadedImages.isDisplayed();
+    	  
+    	   }
+      public void uploadAlbum() {
+    	  btnUpload.click();
+    	
+    	 
+      }
+
+		/*
+		 * public boolean veryfingCloseButton() { //btnUpload.click(); return
+		 * btnClose.isDisplayed();
+		 * 
+		 * }
+		 */
+
 }
+     
+      

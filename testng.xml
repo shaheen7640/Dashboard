@@ -7,7 +7,7 @@
 <class name="com.Dashboard.TestCases.LoginPageTest"/>
 <class name="com.Dashboard.TestCases.HomePageTest"/>
  <class name="com.Dashboard.TestCases.ForgotPasswordTest"/>     
-      
+ <class name="com.Dashboard.TestCases.AddAlbum_GalleryTest"/>    
     </classes>
   </test>
 </suite> <!-- Suite -->

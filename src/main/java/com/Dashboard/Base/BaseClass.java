@@ -1,5 +1,6 @@
 package com.Dashboard.Base;
 
+import java.awt.Robot;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -19,6 +20,7 @@ public class BaseClass {
 
 	public static WebDriver driver =null;
 	public static Properties property;
+	public static Robot robot;
 	
 	public BaseClass() {
 		

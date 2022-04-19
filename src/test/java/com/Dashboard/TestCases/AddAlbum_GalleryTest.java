@@ -1,5 +1,9 @@
 package com.Dashboard.TestCases;
 
+import java.awt.AWTException;
+
+import org.openqa.selenium.By;
+import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
@@ -21,7 +25,7 @@ public class AddAlbum_GalleryTest extends BaseClass {
 	LoginPage loginPage;
 	AddAlbum_GalleryPage addAlubumPage;
 	SoftAssert softAssert = new SoftAssert();
-	String sheetName = property.getProperty("Add_newAlbum");
+	String sheetName = property.getProperty("sheetName_AddAlbum");
 	
 	public AddAlbum_GalleryTest() {
 		
@@ -42,19 +46,39 @@ public class AddAlbum_GalleryTest extends BaseClass {
 		return data;
 	}
 	@Test(dataProvider = "getTestDatafromExcel")
-	public void validate_view_album_label(String albumName) {
+	public void validate_view_album_label(String albumName, String description) throws AWTException {
 		
 		addAlubumPage.view_album_lable();
 		softAssert.assertEquals(AddAlbum_GalleryPage.lbl_AlbumText, property.getProperty("txtViewAlbum"),"View Album text is not appeared");
 		//addAlubumPage.add_album();
-	 addAlubumPage.add_album(albumName);
+	 addAlubumPage.add_album(albumName,description);
 		softAssert.assertAll();
+		
+		boolean flag = addAlubumPage.imageUploadVerification();
+	
+		Assert.assertTrue(flag);
+	System.out.println("Image container visible");
+		//Calling upload function
+	  addAlubumPage.uploadAlbum();	
+	
+	String actualText =  driver.findElement(By.xpath("//button[@class='btn btn-primary' and text()='Close']")).getText();
+	System.out.println("Verification text : "+actualText);
+	String expectedText ="CLOSE";
+	Assert.assertEquals(actualText,expectedText,"Album not uploaded, kindly create the album with a unique name");
+	
+/*
+		
+		
+		//Getting upload button text for assertion
+		String actualText = driver.findElement(By.xpath("//div[@class='col-lg-12 text-center mt-4']")).getText();
+		System.out.println("Verification text : "+actualText);
+		String expectedText ="UPLOAD NOW";
+		Assert.assertEquals(actualText, expectedText,"Album not uploaded, kindly create the album with a unique name");
+		
+		System.out.println("Album uploaded successfully");
+		//addAlubumPage.clickOnClose();
+	*/
 	}
-	/*
-	@Test
-	public void validate_add_newAlbum() {
-		//addAlubumPage.add_album();
-	}*/
 @AfterTest
 public void tearDown() {
 	
