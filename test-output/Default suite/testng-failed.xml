@@ -5,9 +5,9 @@
     <classes>
       <class name="com.Dashboard.TestCases.AddAlbum_GalleryTest">
         <methods>
+          <include name="uploading_Album" invocation-numbers="0"/>
           <include name="tearDown"/>
           <include name="setUp"/>
-          <include name="validate_view_album_label" invocation-numbers="0"/>
         </methods>
       </class> <!-- com.Dashboard.TestCases.AddAlbum_GalleryTest -->
     </classes>

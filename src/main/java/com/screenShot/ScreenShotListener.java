@@ -24,7 +24,7 @@ public class ScreenShotListener extends BaseClass implements ITestListener {
 		try {
 			takeScreenShot(result.getMethod().getMethodName());
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+  
 			e.printStackTrace();
 		}
 	}

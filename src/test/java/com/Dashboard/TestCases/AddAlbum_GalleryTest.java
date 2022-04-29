@@ -46,7 +46,7 @@ public class AddAlbum_GalleryTest extends BaseClass {
 		return data;
 	}
 	@Test(dataProvider = "getTestDatafromExcel")
-	public void validate_view_album_label(String albumName, String description) throws AWTException {
+	public void uploading_Album(String albumName, String description) throws AWTException {
 		
 		addAlubumPage.view_album_lable();
 		softAssert.assertEquals(AddAlbum_GalleryPage.lbl_AlbumText, property.getProperty("txtViewAlbum"),"View Album text is not appeared");
