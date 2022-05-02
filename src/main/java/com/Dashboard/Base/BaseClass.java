@@ -57,6 +57,8 @@ public class BaseClass {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(ExpliciteWait.PAGE_LOAD_TIMEOUT));
 		
 		driver.get(property.getProperty("Url"));
+		//to hold the script deliberately for 5 seconds
+		Thread.sleep(5000);
 		}
 		catch(Exception e) {
 			System.out.println("Make sure you are connected with VPN/Connection is slow/Chromedriver is out of date");

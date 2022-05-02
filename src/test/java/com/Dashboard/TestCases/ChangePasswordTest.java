@@ -32,12 +32,15 @@ public class ChangePasswordTest extends BaseClass {
 		super();
 	}
 	@BeforeClass
-	public void setUp() {
+	public void setUp() throws InterruptedException {
 
 		initialization();
 		loginPage = new LoginPage();
 		changePassword = new ChangePassword();
 		homePage = loginPage.verify_User_Login(property.getProperty("UserName"), property.getProperty("Password"));
+		
+		//to hold the script deliberately for 5 seconds
+				Thread.sleep(5000);
 	}
 
 	@DataProvider
@@ -80,8 +83,9 @@ public class ChangePasswordTest extends BaseClass {
 		 */
 	}
 	@AfterClass
-	public void tearDown() {
-
+	public void tearDown() throws InterruptedException {
+		//to hold the script deliberately for 5 seconds
+				Thread.sleep(5000);
 		driver.quit();
 	}
 }

@@ -1,84 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-04-28T16:46:50 IST" name="Default suite" finished-at="2022-04-28T16:47:29 IST" duration-ms="39405">
+  <suite started-at="2022-05-02T14:41:03 IST" name="Default suite" finished-at="2022-05-02T14:41:36 IST" duration-ms="32319">
     <groups>
     </groups>
-    <test started-at="2022-04-28T16:46:50 IST" name="Default test" finished-at="2022-04-28T16:47:29 IST" duration-ms="39405">
-      <class name="com.Dashboard.TestCases.AddAlbum_GalleryTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.Dashboard.TestCases.AddAlbum_GalleryTest@1e6a3214]" started-at="2022-04-28T16:46:50 IST" name="setUp" finished-at="2022-04-28T16:47:06 IST" duration-ms="15837" status="PASS">
+    <test started-at="2022-05-02T14:41:03 IST" name="Default test" finished-at="2022-05-02T14:41:36 IST" duration-ms="32319">
+      <class name="com.Dashboard.TestCases.ChangePasswordTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.Dashboard.TestCases.ChangePasswordTest@1e6a3214]" started-at="2022-05-02T14:41:03 IST" name="setUp" finished-at="2022-05-02T14:41:24 IST" duration-ms="20989" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="uploading_Album(java.lang.String,java.lang.String)[pri:0, instance:com.Dashboard.TestCases.AddAlbum_GalleryTest@1e6a3214]" started-at="2022-04-28T16:47:06 IST" name="uploading_Album" data-provider="getTestDatafromExcel" finished-at="2022-04-28T16:47:29 IST" duration-ms="23381" status="FAIL">
-          <exception class="org.openqa.selenium.UnhandledAlertException">
-            <message>
-              <![CDATA[unexpected alert open: {Alert text : Album name: Fest2 already exist.}
-  (Session info: chrome=100.0.4896.127): Album name: Fest2 already exist.
-Build info: version: '4.1.2', revision: '9a5a329c5a'
-System info: host: 'DESKTOP-K0LIMU1', ip: '192.168.43.174', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [6cee7591d643114ed8b8d2c1337999a3, screenshot {}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 100.0.4896.127, chrome: {chromedriverVersion: 100.0.4896.60 (6a5d10861ce8..., userDataDir: C:\Users\SHAHEE~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:55143}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:55143/devtoo..., se:cdpVersion: 100.0.4896.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 6cee7591d643114ed8b8d2c1337999a3]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.UnhandledAlertException: unexpected alert open: {Alert text : Album name: Fest2 already exist.}
-  (Session info: chrome=100.0.4896.127): Album name: Fest2 already exist.
-Build info: version: '4.1.2', revision: '9a5a329c5a'
-System info: host: 'DESKTOP-K0LIMU1', ip: '192.168.43.174', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [6cee7591d643114ed8b8d2c1337999a3, screenshot {}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 100.0.4896.127, chrome: {chromedriverVersion: 100.0.4896.60 (6a5d10861ce8..., userDataDir: C:\Users\SHAHEE~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:55143}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:55143/devtoo..., se:cdpVersion: 100.0.4896.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 6cee7591d643114ed8b8d2c1337999a3
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:131)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:558)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:613)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:617)
-at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:348)
-at com.Dashboard.Base.BaseClass.takeScreenShot(BaseClass.java:67)
-at com.screenShot.ScreenShotListener.onTestFailure(ScreenShotListener.java:25)
-at org.testng.internal.TestListenerHelper.runTestListeners(TestListenerHelper.java:99)
-at org.testng.internal.invokers.TestInvoker.runTestResultListener(TestInvoker.java:276)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:744)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:808)
-at org.testng.TestRunner.run(TestRunner.java:603)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
-at org.testng.SuiteRunner.run(SuiteRunner.java:326)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
-at org.testng.TestNG.runSuites(TestNG.java:1092)
-at org.testng.TestNG.run(TestNG.java:1060)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.UnhandledAlertException -->
+        <test-method signature="varify_ChangePassword(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.Dashboard.TestCases.ChangePasswordTest@1e6a3214]" started-at="2022-05-02T14:41:26 IST" name="varify_ChangePassword" data-provider="getTestDatafromExcel" finished-at="2022-05-02T14:41:31 IST" duration-ms="5045" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[test1234]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[test123]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[test123]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- uploading_Album -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.Dashboard.TestCases.AddAlbum_GalleryTest@1e6a3214]" started-at="2022-04-28T16:47:29 IST" name="tearDown" finished-at="2022-04-28T16:47:29 IST" duration-ms="0" status="PASS">
+        </test-method> <!-- varify_ChangePassword -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.Dashboard.TestCases.ChangePasswordTest@1e6a3214]" started-at="2022-05-02T14:41:31 IST" name="tearDown" finished-at="2022-05-02T14:41:36 IST" duration-ms="5155" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.Dashboard.TestCases.AddAlbum_GalleryTest -->
+      </class> <!-- com.Dashboard.TestCases.ChangePasswordTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

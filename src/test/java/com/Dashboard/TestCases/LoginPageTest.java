@@ -71,7 +71,7 @@ public class LoginPageTest extends BaseClass {
 		return data;
 	}
 	@Test(priority = 4, dataProvider = "getTestDatafromExcel")
-	public void validateUserLogin(String email, String password) {
+	public void validateUserLogin(String email, String password) throws InterruptedException {
 	
 		homePage = loginPage.verify_User_Login(email,password);
 		//homePage = loginPage.verify_User_Login(property.getProperty("UserName"), property.getProperty("Pass"));		
@@ -80,6 +80,8 @@ public class LoginPageTest extends BaseClass {
 		boolean flag = loginPage.verify_user_after_login();
 		Assert.assertTrue(flag);
 		System.out.println("User logged in");
+		//to hold the script deliberately for 5 seconds
+		Thread.sleep(5000);
 	}
 	@AfterTest
 	public void tearDown()  {
