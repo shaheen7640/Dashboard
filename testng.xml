@@ -9,6 +9,7 @@
  <class name="com.Dashboard.TestCases.ForgotPasswordTest"/>     
  <class name="com.Dashboard.TestCases.AddAlbum_GalleryTest"/>
 <!--<class name="com.Dashboard.TestCases.ChangePasswordTest"/>  -->  
+<class name="com.Dashboard.TestCases.SendEmailTest"/>
     </classes>
   </test>
 </suite> <!-- Suite -->

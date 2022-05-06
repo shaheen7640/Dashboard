@@ -10,13 +10,6 @@
           <include name="setUp"/>
         </methods>
       </class> <!-- com.Dashboard.TestCases.AddAlbum_GalleryTest -->
-      <class name="com.Dashboard.TestCases.HomePageTest">
-        <methods>
-          <include name="setUp"/>
-          <include name="tearDown"/>
-          <include name="verify_all_menu"/>
-        </methods>
-      </class> <!-- com.Dashboard.TestCases.HomePageTest -->
     </classes>
   </test> <!-- Regression(failed) -->
 </suite> <!-- Failed suite [Regression] -->

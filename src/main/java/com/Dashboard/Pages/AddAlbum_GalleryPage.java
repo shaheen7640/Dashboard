@@ -1,6 +1,7 @@
 package com.Dashboard.Pages;
 
 import java.awt.AWTException;
+import java.awt.HeadlessException;
 import java.awt.Robot;
 import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
@@ -79,19 +80,26 @@ public class AddAlbum_GalleryPage extends BaseClass {
     	 String imagePath = System.getProperty("user.dir")+File.separator+"Upload_Album"+File.separator+property.getProperty("Album");
     	 StringSelection path = new StringSelection(imagePath);
     	// StringSelection imagePath = new StringSelection(property.getProperty("AlbumPath"));
-    	 Toolkit.getDefaultToolkit().getSystemClipboard().setContents(path, null);
-    	 robot.setAutoDelay(3000);
-    	 
-    	 robot.keyPress(KeyEvent.VK_CONTROL);
-    	 robot.keyPress(KeyEvent.VK_V);
-    	 
-    	 robot.keyRelease(KeyEvent.VK_CONTROL);
-    	 robot.keyRelease(KeyEvent.VK_V);
-    	 
-    	 robot.setAutoDelay(2000);
-    	 
-    	 robot.keyPress(KeyEvent.VK_ENTER);
-    	 robot.keyRelease(KeyEvent.VK_ENTER);
+    	
+    	 try {
+			Toolkit.getDefaultToolkit().getSystemClipboard().setContents(path, null);
+			 robot.setAutoDelay(3000);
+			 
+			 robot.keyPress(KeyEvent.VK_CONTROL);
+			 robot.keyPress(KeyEvent.VK_V);
+			 
+			 robot.keyRelease(KeyEvent.VK_CONTROL);
+			 robot.keyRelease(KeyEvent.VK_V);
+			 
+			 robot.setAutoDelay(2000);
+			 
+			 robot.keyPress(KeyEvent.VK_ENTER);
+			 robot.keyRelease(KeyEvent.VK_ENTER);
+		} catch (HeadlessException e) {
+			
+			System.out.println("Unable to copy-paste the album path");
+			e.printStackTrace();
+		}
     	
     	/*  List<WebElement> list = driver.findElements(By.xpath("//div[@class=' css-1wa3eu0-placeholder']"));
     	  System.out.println(list.size());
@@ -111,8 +119,6 @@ public class AddAlbum_GalleryPage extends BaseClass {
     	   }
       public void uploadAlbum() {
     	  btnUpload.click();
-    	
-    	 
       }
 
 		/*

@@ -29,7 +29,7 @@ public class LoginPage extends BaseClass{
     WebElement btnLogout;
     
     @FindBy(css = "a.navbar-brand>img")
-	WebElement homePage_Logo;
+    WebElement homePage_Logo;
     
     //Constructor
     public LoginPage() {

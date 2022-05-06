@@ -61,8 +61,11 @@ public class AddAlbum_GalleryTest extends BaseClass {
 
 		Assert.assertTrue(flag);
 		System.out.println("Image container visible");
-		//Calling upload function
-		addAlubumPage.uploadAlbum();	
+		
+		
+			//Calling upload function
+			addAlubumPage.uploadAlbum();
+			
 
 		String actualText =  driver.findElement(By.xpath("//button[@class='btn btn-primary' and text()='Close']")).getText();
 		System.out.println("Verification text : "+actualText);

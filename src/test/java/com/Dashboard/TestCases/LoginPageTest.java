@@ -78,14 +78,15 @@ public class LoginPageTest extends BaseClass {
 		//loginPage.verify_User_Login(property.getProperty("UserName"), property.getProperty("Pass"));
 		
 		boolean flag = loginPage.verify_user_after_login();
-		Assert.assertTrue(flag);
+		
+		Assert.assertTrue(flag,"Email/Password is incorrect");
 		System.out.println("User logged in");
 		//to hold the script deliberately for 5 seconds
 		Thread.sleep(5000);
 	}
 	@AfterTest
 	public void tearDown()  {
-		driver.quit();
+		//driver.quit();
 		//driver=null;
 	}
 
