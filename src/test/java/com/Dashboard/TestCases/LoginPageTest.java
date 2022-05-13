@@ -21,12 +21,12 @@ public class LoginPageTest extends BaseClass {
 	String sheetName = property.getProperty("Excel_SheetName");
 	//Constructor
 	public LoginPageTest() {
-		
+
 		super();
 	}
 	@BeforeClass
 	public void setUp() {
-		
+
 		//Calling initialization method from Base class
 		initialization();
 		//Creation of object of LoginPage class bcoz verify_LoginPageTitle is a non static function
@@ -35,31 +35,31 @@ public class LoginPageTest extends BaseClass {
 	/*
 	@AfterMethod
 	public void screenShot(ITestResult result) throws IOException {
-	
+
 	if(ITestResult.FAILURE==result.getStatus()) {
 		takeScreenShot(result.getMethod().getMethodName());
 		//System.out.println(result.getName());
 	}
 	}
-	*/
+	 */
 	@Test(priority = 1)
 	public void title_loginPage() throws IOException {
-		
-		
+
+
 		String loginPageTitle = loginPage.verify_LoginPageTitle();
 		System.out.println("Login Page Title: "+ loginPageTitle);
 		Assert.assertEquals(loginPageTitle, property.getProperty("LoginTitle"));
 	}
 	@Test(priority = 2)
 	public void validate_logoOnLoginPage() {
-		
+
 		boolean flag = loginPage.verify_Logo_On_LoginPage();
 		Assert.assertTrue(flag);
 		System.out.println("Logo appeared on login page");
 	}
 	@Test(priority = 3)
 	public void validate_Forgot_Password() {
-		
+
 		String txtForgotPass = loginPage.verify_ForgotPasswordText_OnLoginPage();
 		System.out.println("Forgot password text : "+txtForgotPass);
 		Assert.assertEquals(txtForgotPass, property.getProperty("Forgot_Pass"));
@@ -72,21 +72,35 @@ public class LoginPageTest extends BaseClass {
 	}
 	@Test(priority = 4, dataProvider = "getTestDatafromExcel")
 	public void validateUserLogin(String email, String password) throws InterruptedException {
-	
+
 		homePage = loginPage.verify_User_Login(email,password);
 		//homePage = loginPage.verify_User_Login(property.getProperty("UserName"), property.getProperty("Pass"));		
 		//loginPage.verify_User_Login(property.getProperty("UserName"), property.getProperty("Pass"));
-		
-		boolean flag = loginPage.verify_user_after_login();
-		
-		Assert.assertTrue(flag,"Email/Password is incorrect");
+
+
+		/*
+		 * boolean flag = loginPage.verify_user_after_login();
+		 * Assert.assertTrue(flag,"Email/Password is incorrect");
+		 * 
+		 * System.out.println("User logged in");
+		 */
+
+		//to hold the script deliberately for 3 seconds
+		Thread.sleep(3000);
+
+	}
+	@Test(priority = 5)
+	public void verify_homePage_image() {
+		String actualUrl = "http://192.168.0.27:5000/";
+		String expectedUrl = driver.getCurrentUrl();
+		Assert.assertNotEquals(actualUrl,expectedUrl,"Email/Password is incorrect");
 		System.out.println("User logged in");
-		//to hold the script deliberately for 5 seconds
-		Thread.sleep(5000);
 	}
 	@AfterTest
-	public void tearDown()  {
-		//driver.quit();
+	public void tearDown() throws InterruptedException  {
+		//to hold the script deliberately for 3 seconds
+		Thread.sleep(3000);
+		driver.quit();
 		//driver=null;
 	}
 

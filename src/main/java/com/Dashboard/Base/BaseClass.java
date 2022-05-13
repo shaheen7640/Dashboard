@@ -18,7 +18,7 @@ import com.Dashboard.utill.ExpliciteWait;
 
 public class BaseClass {
 
-	public static WebDriver driver =null;
+	public static WebDriver driver = null;
 	public static Properties property;
 	public static Robot robot;
 	
@@ -48,20 +48,22 @@ public class BaseClass {
 		try {
 			if(driver==null) {
 		System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+ "\\src\\test\\resources\\ChromeDriver\\chromedriver.exe");
-	
-		driver = new ChromeDriver();
+	    driver = new ChromeDriver();
 			}
 		driver.manage().deleteAllCookies();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(ExpliciteWait.PAGE_LOAD_TIMEOUT));
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(ExpliciteWait.PAGE_LOAD_TIMEOUT));
-		
+		//Fetching Url
 		driver.get(property.getProperty("Url"));
+		
 		//to hold the script deliberately for 5 seconds
-		Thread.sleep(5000);
+		//Thread.sleep(5000);
 		}
 		catch(Exception e) {
 			System.out.println("Make sure you are connected with VPN/Connection is slow/Chromedriver is out of date");
+			System.out.println(e.getMessage());
+			
 		}
 	}	
 	public static void takeScreenShot(String testMethodName) throws IOException {

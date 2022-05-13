@@ -39,7 +39,7 @@ public class SendEmailTest extends BaseClass{
 		obj_HomePage = obj_LoginPage.verify_User_Login(property.getProperty("UserName"), property.getProperty("Password"));
 
 		//to hold the script deliberately for 5 seconds
-		Thread.sleep(5000);
+		//Thread.sleep(5000);
 	}
 	@DataProvider
 	public Object[][] getTestDatafromExcel(){
@@ -78,7 +78,7 @@ public class SendEmailTest extends BaseClass{
 	public void verify_email_confirmation_popup() throws InterruptedException {
 		obj_sendEmailPage.btn_Send.click();
 
-		Thread.sleep(3000);
+		//Thread.sleep(3000);
 
 		obj_sendEmailPage.wait_for_alert();
 		/*
@@ -99,9 +99,10 @@ public class SendEmailTest extends BaseClass{
 	}
 	@AfterClass
 	public void tearDown() throws InterruptedException {
-		//to hold the script deliberately for 5 seconds
-				Thread.sleep(5000);
+		//to hold the script deliberately for 3 seconds
+		Thread.sleep(3000);
 		driver.quit();
+
 	}
 
 }

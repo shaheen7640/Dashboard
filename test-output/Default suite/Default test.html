@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Fri May 06 18:20:40 IST 2022</td>
+<td>Started on:</td><td>Fri May 13 16:49:18 IST 2022</td>
 </tr>
-<tr><td>Total time:</td><td>41 seconds (41195 ms)</td>
+<tr><td>Total time:</td><td>16 seconds (16450 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,29 +75,15 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.Dashboard.TestCases.AddAlbum_GalleryTest.uploading_Album()'><b>uploading_Album</b><br>Test class: com.Dashboard.TestCases.AddAlbum_GalleryTest</td>
-<td><div><pre>org.openqa.selenium.UnhandledAlertException: unexpected alert open: {Alert text : Album name: Fest2 already exist.}
-  (Session info: chrome=100.0.4896.127): Album name: Fest2 already exist.
-Build info: version: &apos;4.1.2&apos;, revision: &apos;9a5a329c5a&apos;
-System info: host: &apos;DESKTOP-K0LIMU1&apos;, ip: &apos;192.168.0.109&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.2&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [6860b8cc4468b941b27afec153b65391, screenshot {}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 100.0.4896.127, chrome: {chromedriverVersion: 100.0.4896.60 (6a5d10861ce8..., userDataDir: C:\Users\SHAHEE~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:55237}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:55237/devtoo..., se:cdpVersion: 100.0.4896.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 6860b8cc4468b941b27afec153b65391
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:131)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:558)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:613)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:617)
-	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:348)
-	at com.Dashboard.Base.BaseClass.takeScreenShot(BaseClass.java:69)
-	at com.screenShot.ScreenShotListener.onTestFailure(ScreenShotListener.java:25)
-	at org.testng.internal.TestListenerHelper.runTestListeners(TestListenerHelper.java:99)
-	at org.testng.internal.invokers.TestInvoker.runTestResultListener(TestInvoker.java:276)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:744)
+<td title='com.Dashboard.TestCases.View_Monthly_AttendanceTest.verify_view_monthly_attendance()'><b>verify_view_monthly_attendance</b><br>Test class: com.Dashboard.TestCases.View_Monthly_AttendanceTest<br>Parameters: 2018 , March</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;com.Dashboard.Pages.View_Monthly_AttendancePage.click_On_menuAdmin()&quot; because &quot;this.obj_View_Monthly_Attendance&quot; is null
+	at com.Dashboard.TestCases.View_Monthly_AttendanceTest.verify_view_monthly_attendance(View_Monthly_AttendanceTest.java:61)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
 	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
 	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
 	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
@@ -120,29 +106,15 @@ Session ID: 6860b8cc4468b941b27afec153b65391
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1593749783", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1593749783'><pre>org.openqa.selenium.UnhandledAlertException: unexpected alert open: {Alert text : Album name: Fest2 already exist.}
-  (Session info: chrome=100.0.4896.127): Album name: Fest2 already exist.
-Build info: version: &apos;4.1.2&apos;, revision: &apos;9a5a329c5a&apos;
-System info: host: &apos;DESKTOP-K0LIMU1&apos;, ip: &apos;192.168.0.109&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.2&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [6860b8cc4468b941b27afec153b65391, screenshot {}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 100.0.4896.127, chrome: {chromedriverVersion: 100.0.4896.60 (6a5d10861ce8..., userDataDir: C:\Users\SHAHEE~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:55237}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:55237/devtoo..., se:cdpVersion: 100.0.4896.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 6860b8cc4468b941b27afec153b65391
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:131)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:558)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:613)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:617)
-	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:348)
-	at com.Dashboard.Base.BaseClass.takeScreenShot(BaseClass.java:69)
-	at com.screenShot.ScreenShotListener.onTestFailure(ScreenShotListener.java:25)
-	at org.testng.internal.TestListenerHelper.runTestListeners(TestListenerHelper.java:99)
-	at org.testng.internal.invokers.TestInvoker.runTestResultListener(TestInvoker.java:276)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:744)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1785495362", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1785495362'><pre>java.lang.NullPointerException: Cannot invoke &quot;com.Dashboard.Pages.View_Monthly_AttendancePage.click_On_menuAdmin()&quot; because &quot;this.obj_View_Monthly_Attendance&quot; is null
+	at com.Dashboard.TestCases.View_Monthly_AttendanceTest.verify_view_monthly_attendance(View_Monthly_AttendanceTest.java:61)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
 	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
 	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
 	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
@@ -166,8 +138,8 @@ Session ID: 6860b8cc4468b941b27afec153b65391
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>18</td>
-<td>com.Dashboard.TestCases.AddAlbum_GalleryTest@1e6a3214</td></tr>
+<td>0</td>
+<td>com.Dashboard.TestCases.View_Monthly_AttendanceTest@41a0aa7d</td></tr>
 </table><p>
 </body>
 </html>

@@ -35,9 +35,9 @@ public class ForgotPasswordTest extends BaseClass {
 	}
 	@AfterTest
 	public void tearDown() throws InterruptedException {
-		//to hold the script deliberately for 5 seconds
-		Thread.sleep(5000);
+		//to hold the script deliberately for 3 seconds
+		Thread.sleep(3000);
 		driver.quit();
-		//driver=null;
+		
 	}
 }

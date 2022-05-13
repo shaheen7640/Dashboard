@@ -28,8 +28,8 @@ public class LoginPage extends BaseClass{
     @FindBy(xpath = "//a[contains(text(),'Logout')]")
     WebElement btnLogout;
     
-    @FindBy(css = "a.navbar-brand>img")
-    WebElement homePage_Logo;
+//   @FindBy(css = "a.navbar-brand>img")
+//   WebElement homePage_Logo;
     
     //Constructor
     public LoginPage() {
@@ -49,10 +49,12 @@ public class LoginPage extends BaseClass{
     	
     	return forgotPaswrd_linktext.getText();
     }
-    public boolean verify_user_after_login() {
-    	
-    	return homePage_Logo.isDisplayed();
-    }
+
+	/*
+	 * public boolean verify_user_after_login() {
+	 * 
+	 * return homePage_Logo.isDisplayed(); }
+	 */
     //this function contains HomePage return type
     public HomePage verify_User_Login(String usrName, String pwd) {
     	

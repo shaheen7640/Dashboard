@@ -38,7 +38,7 @@ public class HomePageTest extends BaseClass {
 		homePage = loginPage.verify_User_Login(property.getProperty("UserName"),property.getProperty("Password"));
 		
 		//to hold the script deliberately for 5 seconds
-		Thread.sleep(5000);
+		//Thread.sleep(5000);
 	}
 
 	@Test
@@ -113,8 +113,9 @@ public class HomePageTest extends BaseClass {
 		softAssertion.assertAll();
 	}
 	@AfterTest
-	public void tearDown() {
-
+	public void tearDown() throws InterruptedException {
+		//to hold the script deliberately for 3 seconds
+		Thread.sleep(3000);
 		driver.quit();
 		//driver=null;
 	}

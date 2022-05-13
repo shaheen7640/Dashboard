@@ -3,6 +3,19 @@
 <suite name="Failed suite [Regression]" guice-stage="DEVELOPMENT" verbose="2">
   <test thread-count="5" name="Regression(failed)" verbose="2">
     <classes>
+      <class name="com.Dashboard.TestCases.View_Monthly_AttendanceTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="verify_view_monthly_attendance" invocation-numbers="0 1"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.Dashboard.TestCases.View_Monthly_AttendanceTest -->
+      <class name="com.Dashboard.TestCases.Sample">
+        <methods>
+          <include name="setUp"/>
+          <include name="launchGoogle"/>
+        </methods>
+      </class> <!-- com.Dashboard.TestCases.Sample -->
       <class name="com.Dashboard.TestCases.AddAlbum_GalleryTest">
         <methods>
           <include name="uploading_Album" invocation-numbers="0"/>

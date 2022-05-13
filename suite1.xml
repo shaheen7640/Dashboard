@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Regression"  verbose="2">
-  <test name="Regression">
-    <classes>
+<suite name="Suite1" verbose="2">
   
+<test name="Regression">
+    <classes>
+
 <class name="com.Dashboard.TestCases.LoginPageTest"/>
 <class name="com.Dashboard.TestCases.HomePageTest"/>
  <class name="com.Dashboard.TestCases.ForgotPasswordTest"/>     
- <class name="com.Dashboard.TestCases.AddAlbum_GalleryTest"/>
-<!--<class name="com.Dashboard.TestCases.ChangePasswordTest"/>  -->  
+<!--<class name="com.Dashboard.TestCases.ChangePasswordTest"/> -->  
+<class name="com.Dashboard.TestCases.AddAlbum_GalleryTest"/>
 <class name="com.Dashboard.TestCases.SendEmailTest"/>
-    </classes>
+<class name="com.Dashboard.TestCases.View_Monthly_AttendanceTest"/>
+
+</classes>
   </test>
-</suite> <!-- Suite -->
+</suite>
