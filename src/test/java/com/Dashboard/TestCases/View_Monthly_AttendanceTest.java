@@ -1,8 +1,11 @@
 package com.Dashboard.TestCases;
 
 
+
+
+
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
@@ -24,17 +27,20 @@ public class View_Monthly_AttendanceTest extends BaseClass {
 	View_Monthly_AttendancePage obj_View_Monthly_Attendance;
 	String sheetName = property.getProperty("sheetName_ViewMonthlyAttendance");
 
+
 	public View_Monthly_AttendanceTest(){
 
 		super();
+
 	}
 	@BeforeClass
 	public void setUp() throws InterruptedException {
 
 		initialization();
+
 		obj_LoginPage = new LoginPage();
-		obj_HomePage = obj_LoginPage.verify_User_Login(property.getProperty("UserName"), property.getProperty("Password"));
 		obj_View_Monthly_Attendance = new View_Monthly_AttendancePage();
+		obj_HomePage = obj_LoginPage.verify_User_Login(property.getProperty("UserName"), property.getProperty("Password"));
 
 		//to hold the script deliberately for 5 seconds
 		Thread.sleep(5000);
@@ -70,11 +76,10 @@ public class View_Monthly_AttendanceTest extends BaseClass {
 		//Calling wait function
 		obj_View_Monthly_Attendance.waitForAttendanceTable();
 	}
-	@AfterClass
+	@AfterTest
 	public void tearDown() throws InterruptedException {
 		//to hold the script deliberately for 3 seconds
 		Thread.sleep(3000);
-		driver.quit();
-
+		BaseClass.quit();
 	}
 }

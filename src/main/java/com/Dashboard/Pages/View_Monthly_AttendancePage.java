@@ -16,6 +16,7 @@ import com.Dashboard.Base.BaseClass;
 
 public class View_Monthly_AttendancePage extends BaseClass{
 
+	
 	@FindBy(css = "ul.navbar-nav.mr-auto.nav-grp-left-pad>li:nth-of-type(7)>a")
 	WebElement menu_Admin;
 
@@ -35,6 +36,7 @@ public class View_Monthly_AttendancePage extends BaseClass{
 
 		PageFactory.initElements(driver, this);
 	}
+	
 	public void click_On_menuAdmin() {
 		menu_Admin.click();
 	}

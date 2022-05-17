@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.Dashboard.TestCases.View_Monthly_AttendanceTest">
+      <class name="com.Dashboard.TestCases.LoginPageTest">
         <methods>
-          <include name="tearDown"/>
-          <include name="verify_view_monthly_attendance" invocation-numbers="0"/>
+          <include name="verify_homePage_image"/>
           <include name="setUp"/>
+          <include name="tearDown"/>
         </methods>
-      </class> <!-- com.Dashboard.TestCases.View_Monthly_AttendanceTest -->
+      </class> <!-- com.Dashboard.TestCases.LoginPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -56,7 +56,7 @@ public class BaseClass {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(ExpliciteWait.PAGE_LOAD_TIMEOUT));
 		//Fetching Url
 		driver.get(property.getProperty("Url"));
-		
+	
 		//to hold the script deliberately for 5 seconds
 		//Thread.sleep(5000);
 		}
@@ -73,5 +73,9 @@ public class BaseClass {
 		
 		FileUtils.copyFile(scrnShot,new File(currentDir+"\\Screenshot\\"+testMethodName+".png"));
 	}
-	
+	public static void quit() {
+		
+		driver.quit();
+		//driver = null;
+	}
 	}

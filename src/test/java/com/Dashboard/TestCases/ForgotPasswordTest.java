@@ -1,6 +1,7 @@
 package com.Dashboard.TestCases;
 
 
+
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
@@ -37,7 +38,9 @@ public class ForgotPasswordTest extends BaseClass {
 	public void tearDown() throws InterruptedException {
 		//to hold the script deliberately for 3 seconds
 		Thread.sleep(3000);
-		driver.quit();
+		BaseClass.quit();
+		//driver.quit();
+		//driver=null;
 		
 	}
 }

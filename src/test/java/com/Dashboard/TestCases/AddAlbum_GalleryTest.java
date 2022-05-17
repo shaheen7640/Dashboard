@@ -87,6 +87,7 @@ public class AddAlbum_GalleryTest extends BaseClass {
 	public void tearDown() throws InterruptedException {
 		//to hold the script deliberately for 3 seconds
 		Thread.sleep(3000);
-		driver.quit();
+		BaseClass.quit();
+		
 	}
 }

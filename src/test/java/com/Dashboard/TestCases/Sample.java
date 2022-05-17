@@ -1,6 +1,6 @@
 package com.Dashboard.TestCases;
 
-import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -33,11 +33,11 @@ public class Sample extends BaseClass{
 		System.out.println("inside - launch google method");
 	}
 	
-	@AfterClass
+	@AfterTest
 	public void tearDown() throws InterruptedException {
 		Thread.sleep(3000);
-		driver.quit();
-		
+		BaseClass.quit();
+				
 	}
 
 }

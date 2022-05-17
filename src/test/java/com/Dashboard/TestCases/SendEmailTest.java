@@ -1,7 +1,8 @@
 package com.Dashboard.TestCases;
 
+
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
@@ -34,6 +35,7 @@ public class SendEmailTest extends BaseClass{
 	public void setUp() throws InterruptedException {
 
 		initialization();
+
 		obj_LoginPage = new LoginPage();
 		obj_sendEmailPage = new SendEmailPage();
 		obj_HomePage = obj_LoginPage.verify_User_Login(property.getProperty("UserName"), property.getProperty("Password"));
@@ -78,8 +80,6 @@ public class SendEmailTest extends BaseClass{
 	public void verify_email_confirmation_popup() throws InterruptedException {
 		obj_sendEmailPage.btn_Send.click();
 
-		//Thread.sleep(3000);
-
 		obj_sendEmailPage.wait_for_alert();
 		/*
 		 * WebDriverWait alertWait = new WebDriverWait(driver,Duration.ofSeconds(30));
@@ -97,12 +97,11 @@ public class SendEmailTest extends BaseClass{
 		 */
 
 	}
-	@AfterClass
+	@AfterTest
 	public void tearDown() throws InterruptedException {
 		//to hold the script deliberately for 3 seconds
 		Thread.sleep(3000);
-		driver.quit();
-
+		BaseClass.quit();
 	}
 
 }

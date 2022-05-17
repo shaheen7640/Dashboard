@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>4/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Fri May 13 16:49:18 IST 2022</td>
+<td>Started on:</td><td>Tue May 17 18:39:40 IST 2022</td>
 </tr>
-<tr><td>Total time:</td><td>16 seconds (16450 ms)</td>
+<tr><td>Total time:</td><td>61 seconds (61351 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,9 +75,13 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.Dashboard.TestCases.View_Monthly_AttendanceTest.verify_view_monthly_attendance()'><b>verify_view_monthly_attendance</b><br>Test class: com.Dashboard.TestCases.View_Monthly_AttendanceTest<br>Parameters: 2018 , March</td>
-<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;com.Dashboard.Pages.View_Monthly_AttendancePage.click_On_menuAdmin()&quot; because &quot;this.obj_View_Monthly_Attendance&quot; is null
-	at com.Dashboard.TestCases.View_Monthly_AttendanceTest.verify_view_monthly_attendance(View_Monthly_AttendanceTest.java:61)
+<td title='com.Dashboard.TestCases.LoginPageTest.verify_homePage_image()'><b>verify_homePage_image</b><br>Test class: com.Dashboard.TestCases.LoginPageTest</td>
+<td><div><pre>java.lang.AssertionError: Email/Password is incorrect did not expect [http://192.168.0.27:5000/] but found [http://192.168.0.27:5000/]
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.failEquals(Assert.java:1417)
+	at org.testng.Assert.assertNotEqualsImpl(Assert.java:156)
+	at org.testng.Assert.assertNotEquals(Assert.java:1986)
+	at com.Dashboard.TestCases.LoginPageTest.verify_homePage_image(LoginPageTest.java:99)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -106,9 +110,13 @@ function toggleAllBoxes() {
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1785495362", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1785495362'><pre>java.lang.NullPointerException: Cannot invoke &quot;com.Dashboard.Pages.View_Monthly_AttendancePage.click_On_menuAdmin()&quot; because &quot;this.obj_View_Monthly_Attendance&quot; is null
-	at com.Dashboard.TestCases.View_Monthly_AttendanceTest.verify_view_monthly_attendance(View_Monthly_AttendanceTest.java:61)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1831418259", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1831418259'><pre>java.lang.AssertionError: Email/Password is incorrect did not expect [http://192.168.0.27:5000/] but found [http://192.168.0.27:5000/]
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.failEquals(Assert.java:1417)
+	at org.testng.Assert.assertNotEqualsImpl(Assert.java:156)
+	at org.testng.Assert.assertNotEquals(Assert.java:1986)
+	at com.Dashboard.TestCases.LoginPageTest.verify_homePage_image(LoginPageTest.java:99)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -139,7 +147,35 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
 <td>0</td>
-<td>com.Dashboard.TestCases.View_Monthly_AttendanceTest@41a0aa7d</td></tr>
+<td>com.Dashboard.TestCases.LoginPageTest@52b1beb6</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.Dashboard.TestCases.LoginPageTest.validate_Forgot_Password()'><b>validate_Forgot_Password</b><br>Test class: com.Dashboard.TestCases.LoginPageTest</td>
+<td></td>
+<td>0</td>
+<td>com.Dashboard.TestCases.LoginPageTest@52b1beb6</td></tr>
+<tr>
+<td title='com.Dashboard.TestCases.LoginPageTest.title_loginPage()'><b>title_loginPage</b><br>Test class: com.Dashboard.TestCases.LoginPageTest</td>
+<td></td>
+<td>0</td>
+<td>com.Dashboard.TestCases.LoginPageTest@52b1beb6</td></tr>
+<tr>
+<td title='com.Dashboard.TestCases.LoginPageTest.validateUserLogin()'><b>validateUserLogin</b><br>Test class: com.Dashboard.TestCases.LoginPageTest<br>Parameters: dashboard@aimbeyond.com, test123</td>
+<td></td>
+<td>3</td>
+<td>com.Dashboard.TestCases.LoginPageTest@52b1beb6</td></tr>
+<tr>
+<td title='com.Dashboard.TestCases.LoginPageTest.validate_logoOnLoginPage()'><b>validate_logoOnLoginPage</b><br>Test class: com.Dashboard.TestCases.LoginPageTest</td>
+<td></td>
+<td>0</td>
+<td>com.Dashboard.TestCases.LoginPageTest@52b1beb6</td></tr>
 </table><p>
 </body>
 </html>

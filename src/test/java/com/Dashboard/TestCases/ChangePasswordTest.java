@@ -2,7 +2,7 @@ package com.Dashboard.TestCases;
 
 
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
@@ -82,10 +82,10 @@ public class ChangePasswordTest extends BaseClass {
 		 * myAlert);
 		 */
 	}
-	@AfterClass
+	@AfterTest
 	public void tearDown() throws InterruptedException {
 		//to hold the script deliberately for 3 seconds
 		Thread.sleep(3000);
-		driver.quit();
+		BaseClass.quit();
 	}
 }
